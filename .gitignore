@@ -1,0 +1,28 @@
+# Node.js / NPM
+node_modules/
+npm-debug.log
+yarn-error.log
+yarn.lock
+
+# Environment variables
+.env
+
+# OS or editor-specific files
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# Build output
+dist/
+build/
+out/
+*.zip
+
+# Dependency lock files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
