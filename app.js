@@ -1,10 +1,14 @@
 const express = require('express');
+const cors = require('cors');
 require('dotenv').config();
 
 const app = express();
 const db = require('./config/database');
+
 const login = require('./route/login');
 const signupRoute = require('./route/signup');
+const cart = require('./route/getCart');
+const addToCart = require('./route/addTocart');
 
 app.get('/', (req, res) => {
 	res.send('hello');
@@ -12,8 +16,11 @@ app.get('/', (req, res) => {
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 app.use('/signup', signupRoute);
 app.use('/login', login);
+app.use('/cart', cart);
+app.use('/cart/addToCart', addToCart);
 
 const PORT = process.env.APP_PORT || 8000;
 

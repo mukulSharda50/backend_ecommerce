@@ -18,7 +18,7 @@ router.post('/', async (req, res) => {
 			username.length < 3 ||
 			username.length > 255
 		)
-			res
+			return res
 				.status(400)
 				.json({ error: 'Name should be between 3 and 255 characters.' });
 
